@@ -199,8 +199,22 @@ console.log(vocalsRemoverFromObject(testObjMultiContainer));
 let someWordsToTest = ["compañeros", "estudiantes", "señores", "amigos", "graduandos", "artistas", "universitarios"];
 
 function lastVocalReplacer(words) {
-    // :)
+    let medidor = 0;
+    for (let i = 0; i < words.length; i++) {
+        const palabra = words[i];
+        for (let a = palabra.length; a > -1; a--) {
+            const letras = palabra[a];
+            if(letras === 'a' || letras === 'e' || letras === 'i' || letras === 'o' || letras === 'u'){
+                medidor++;
+            }
+            if(medidor === 1){
+                letras.replace(a,"x");
+            }
+        }
+    }
+    console.log(words)
 }
+lastVocalReplacer(someWordsToTest);
 
 
 /*Dada una lista de palabras verificar si alguna de las palabras es la
