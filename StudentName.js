@@ -226,5 +226,19 @@ let testListA = ["amor", "sabor", "calor","firma", "mara"];
 let testListB = ["roma", "robar", "portar", "arma", "mora"];
 
 function doubleListVerifier(listA, listB) {
-    // :)
-}
+    let numeroDoble = 0;
+    let nuevo=[]; 
+    for (let i = 0; i < listB.length; i++) {
+        nuevo[i]=listB[i].split("").reverse().join("");
+    }
+    for (let i = 0; i < listA.length; i++) {
+        for(let j = 0; j < nuevo.length; j++){
+            if (nuevo[j] == listA[i]){
+                numeroDoble++;
+            }return numeroDoble;
+        }
+    }
+    return {numeroDoble}  
+  }
+
+  console.log(doubleListVerifier(testListA,testListB));
