@@ -180,9 +180,18 @@ let testObjMultiContainer = {
 };
 
 function vocalsRemoverFromObject(objectMultiContainer) {
-    // :)
+    let consonantes = [];
+    for (let i = 0; i < objectMultiContainer.listA.length; i++) {
+        for (let a = 0; a < objectMultiContainer.listA[i].length; a++) {
+            const element = objectMultiContainer.listA[i][a];
+            if(element !== 'a' || element !== 'e' || element !== 'i' || element !== 'o' || element !== 'u'){
+                consonantes.push(element);
+            }
+        }
+    }
+    objectMultiContainer = {consonantes};
+    return console.log(consonantes)
 }
-
 console.log(vocalsRemoverFromObject(testObjMultiContainer));
 
 /*Dado un arreglo de palabras reemplazar la última vocal por una x y retornar dicho arreglo.*/
