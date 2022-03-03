@@ -97,7 +97,7 @@ let onVerificationWordB = "querer";
 let onVerificationWordC = "Gomosos";
 let onVerificationWordD = "Somos";
 
-function palindromeVerifier(word) {
+function palindrome(word) {
     word = word.toLowerCase()
     if(word.charAt(0) === word.charAt(word.length-1)){
         console.log(word + " es un palíndromo")
@@ -105,10 +105,10 @@ function palindromeVerifier(word) {
         console.log(word + " no es un palíndromo")
     }
 }
-palindromeVerifier(onVerificationWordA);
-palindromeVerifier(onVerificationWordB);
-palindromeVerifier(onVerificationWordC);
-palindromeVerifier(onVerificationWordD);
+palindrome(onVerificationWordA);
+palindrome(onVerificationWordB);
+palindrome(onVerificationWordC);
+palindrome(onVerificationWordD);
 
 
 
@@ -118,8 +118,29 @@ let containerTestObject = {
     list:["Cumbamba", "Oreja", "Nariz", "Ojo", "Lengua", "Diente"]
 }
 function lettersCounter(objectContainer) {
-   // :)
-}
+    const list = containerTestObject.list;
+    let vocales = 0;
+    let consonantes = 0;
+    list.forEach(word => {
+      word.split('').forEach(letter => {
+        if (
+          letter === 'a' ||
+          letter === 'e' ||
+          letter === 'i' ||
+          letter === 'o' ||
+          letter === 'u'
+        ) {
+          vocales++;
+         } else {
+           consonantes++;
+         }       
+        
+      })
+    })
+    return [vocales, consonantes];
+  }
+  console.log(lettersCounter(containerTestObject));
+
 
 
 /*Dado 2 arreglos de strings retornar un arreglo con todos los strings.*/
