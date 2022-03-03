@@ -161,9 +161,16 @@ let testWordToExplore = "amar";
 let wordsToVerify = ["amar", "arma", "rana" , "mara", "rama", "roma", "amor", "ramon", "omar"];
 
 function anagramVerifier(wordToExplore, listOfWords) {
-   // :)
-}
+    result = []
 
+    listOfWords.forEach((palabra, i) => {
+  
+        if(palabra.split("").every(letra => {
+            return wordToExplore.includes (letra);
+        })) result.push(i)
+  
+    })
+  }
 /*Dado un objeto que contiene 2 arreglos, retornar un objeto con 1
 arreglo que contiene las palabras sin vocales.*/
 
