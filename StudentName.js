@@ -29,8 +29,28 @@ let testWordsList = [
 
 // pruebe para cada palabra A, B y C
 function wordSearcherIgnoreCase(targetWord, wordsList) {
-   // :)
+    targetWord = targetWord.toLowerCase();
+    targetWord = normalizeWord(targetWord);
+    let estado = false;
+   for (let i = 0; i < wordsList.length; i++) {
+       const word = wordsList[i];
+       if(targetWord == word.toLowerCase()){
+           estado = true;
+       }
+   }
+   if(estado === true){
+    console.log(targetWord + " esta en la lista.");
+    }else{
+    console.log(targetWord + " no esta en la lista.");
+    }
 }
+function normalizeWord(word){
+    return word = word.normalize('NFD').replace(/[\u00C0-\u00FF]/g, '');
+}
+wordSearcherIgnoreCase(testTargetWordA, testWordsList);
+wordSearcherIgnoreCase(testTargetWordB, testWordsList);
+wordSearcherIgnoreCase(testTargetWordC, testWordsList);
+
 
 
 
