@@ -71,8 +71,23 @@ let testSampleList = [
 ];
 
 function wordLengthClassifier(wordsList) {
-    // :)
+    let palabraLarga = wordsList[0];
+    let palabraCorta = wordsList[0];
+    let palabraPromedio = 0;
+    for (let i = 0; i < wordsList.length; i++) {
+        if(wordsList[i].length > palabraLarga.length){
+            palabraLarga = wordsList[i];
+        }
+        if(wordsList[i].length < palabraCorta.length){
+            palabraCorta = wordsList[i];
+        }
+        palabraPromedio += wordsList[i].length;
+    }
+    console.log(palabraLarga + " palabra mas larga");
+    console.log(palabraCorta + " palabra mas corta");
+    console.log("El promedio de letras es: " + palabraPromedio);
 }
+wordLengthClassifier(testSampleList)
 
 
 /*Dado un string retorna si este es o no un palíndromo. No debe diferenciar entre mayúsculas y minúsculas*/
