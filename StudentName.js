@@ -183,9 +183,9 @@ function vocalsRemoverFromObject(objectMultiContainer) {
     let consonantes = [];
     for (let i = 0; i < objectMultiContainer.listA.length; i++) {
         for (let a = 0; a < objectMultiContainer.listA[i].length; a++) {
-            const element = objectMultiContainer.listA[i][a];
-            if(element !== 'a' || element !== 'e' || element !== 'i' || element !== 'o' || element !== 'u'){
-                consonantes.push(element);
+            const letras = objectMultiContainer.listA[i][a];
+            if(letras !== 'a' || letras !== 'e' || letras !== 'i' || letras !== 'o' || letras !== 'u'){
+                consonantes.push(letras);
             }
         }
     }
